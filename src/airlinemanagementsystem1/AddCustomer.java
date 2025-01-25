@@ -91,7 +91,7 @@ public class AddCustomer extends JFrame implements ActionListener{
         save.addActionListener(this);
         add(save);
         
-        ImageIcon image = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/emp.png"));
+        ImageIcon image = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem1/icons/emp.png"));
         JLabel lblimage = new JLabel(image);
         lblimage.setBounds(450, 80, 280, 400);
         add(lblimage);
