@@ -122,7 +122,8 @@ public class Conn {
 #### Ticket Cancellation:
 - Admin can cancel flight bookings.
 Boarding Pass Generation: ticket detail will  show.
-
+ #### Demo
+ https://github.com/Vartikasingh28/AirlineManagementSystem/blob/75aae4a550a21c4a5fc98b5b6c6c7cc4fd82dc2d/AirlineManagementSystem1.jar
 
 ## Screenshots
 
