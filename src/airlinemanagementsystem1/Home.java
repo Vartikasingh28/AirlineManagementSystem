@@ -4,25 +4,29 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Home extends JFrame implements ActionListener{
+public class Home extends JFrame implements ActionListener {
     
     public Home() {
         setLayout(null);
         
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/front.jpg"));
+        // Background Image
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem1/icons/front.jpg"));
         JLabel image = new JLabel(i1);
         image.setBounds(0, 0, 1600, 800);
         add(image);
         
+        // Heading Label
         JLabel heading = new JLabel("AIR INDIA WELCOMES YOU");
         heading.setBounds(500, 40, 1000, 40);
         heading.setForeground(Color.BLUE);
         heading.setFont(new Font("Tahoma", Font.PLAIN, 36));
         image.add(heading);
         
+        // Menu Bar
         JMenuBar menubar = new JMenuBar();
         setJMenuBar(menubar);
         
+        // Details Menu
         JMenu details = new JMenu("Details");
         menubar.add(details);
         
@@ -46,17 +50,20 @@ public class Home extends JFrame implements ActionListener{
         ticketCancellation.addActionListener(this);
         details.add(ticketCancellation);
         
+        // Ticket Menu
         JMenu ticket = new JMenu("Ticket");
         menubar.add(ticket);
         
         JMenuItem boardingPass = new JMenuItem("Boarding Pass");
+        boardingPass.addActionListener(this);
         ticket.add(boardingPass);
         
-        
+        // Frame Settings
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
     }
     
+    @Override
     public void actionPerformed(ActionEvent ae) {
         String text = ae.getActionCommand();
         
@@ -70,6 +77,8 @@ public class Home extends JFrame implements ActionListener{
             new JourneyDetails();
         } else if (text.equals("Cancel Ticket")) {
             new Cancel();
+        } else if (text.equals("Boarding Pass")) { // Handle Boarding Pass action
+            new BoardingPass();
         }
     }
     
